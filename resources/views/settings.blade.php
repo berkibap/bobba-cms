@@ -95,13 +95,8 @@
                 Design by <b>Sonay</b> for <b>Luminia</b>
             </div>
         </div>
-        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-    <script type="application/javascript" src="/web/js/alertify.js"></script>
-    <script type="application/javascript" src="/web/js/alertify.min.js"></script>
-    @if(Session::has('message'))
+        @include('partials.footer')
+         @if(Session::has('message'))
     <script>alertify.success('{{Session::get('message')}}');</script>
     @endif
-    </body>
-    
-</html>
+   

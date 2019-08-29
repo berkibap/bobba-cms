@@ -44,3 +44,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/register', 'RegisterController@register')->middleware('notLoggedIn');
 
 });
+Route::group(['prefix' => 'acp'], function () {
+   
+});

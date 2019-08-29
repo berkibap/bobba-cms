@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use \App\User;
+use Illuminate\Support\Facades\DB;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,6 +14,6 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('/online-count', function (Request $request) {
+    echo(DB::select('select count(*) c from users where online = ? ', [1])[0]->c);
 });

@@ -13,7 +13,7 @@
                 <div class="logo"></div>
                 <div class="textsDetails">
                     <h3>World Connected</h3>
-                    <p>Es sind gerade <b>1337</b> Bobbas online</p>
+                    <p>Es sind gerade <b id="online-count">1337</b> Bobbas online</p>
                 </div>
                 <div id="contentBox">
                     <div class="padding">
@@ -42,7 +42,7 @@
                             <div class="messages">
                                 <h2>Willkommen im Bobba Hotel</h2>
                                 <p>Bobba Hotel ist eine virtuelle Welt wo du deinen eigenen Charakter erstellen kannst, deine eigenen Räume erstellen kannst und neue sowie alte Freunde wieder finden kannst.</p>
-                                <a href="register.php" class="registerButton">Jetzt kostenlos registrieren</a>
+                                <a href="/register" class="registerButton">Jetzt kostenlos registrieren</a>
                             </div>
                         </div>
                     </div>
@@ -61,16 +61,4 @@
                     <p style="margin-top:12px">Bei den Events unserer Mitarbeiter kannst du immer wieder tolle Preise gewinnen!</p>
                 </div>
                 <div style="clear:both"></div>
-                <div id="footer-content">
-                    Copyright &copy; <?php echo date('Y'); ?> Bobba Hotel - All rights reserved.<br />
-                    Design by <b>Sonay</b> for <b>Luminia</b>
-                </div>
-            </div>
-        </div>
-    </body>
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-    <script type="application/javascript" src="web/js/alertify.js"></script>
-    <script type="application/javascript" src="web/js/alertify.min.js"></script>
-    <script>alertify.success('FEHLER');</script>
-</html>
+                @include('partials.footer')

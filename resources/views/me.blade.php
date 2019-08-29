@@ -103,13 +103,4 @@
                 </div>
             </div>
         </div>
-        <div id="footer-content">
-            <div class="container_24">
-                Copyright &copy; <?php echo date('Y'); ?> Bobba Hotel - All rights reserved.<br />
-                Design by <b>Sonay</b> for <b>Luminia</b>
-                <br />
-                BobbaCMS by <b>Berk</b> for <b> Bobba </b>
-            </div>
-        </div>
-    </body>
-</html>
+        @include('partials.footer')

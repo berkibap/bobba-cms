@@ -2,7 +2,7 @@
         <div class="container_24">
             <div class="grid_24">
                 <div class="logo">
-                    <div class="onlineCount"><span>1337</span> Bobba(s) online</div>
+                    <div class="onlineCount"><span id="online-count">0</span> Bobba(s) online</div>
                 </div>
                 <a href="/hotel" target="_blank" class="checkIn">Einchecken</a>
             </div>
@@ -22,7 +22,8 @@
                 <ul class="header-menu">
                     <li><a href="/community"><i class="fa fa-users icon" aria-hidden="true"></i>Community</a></li>
                     <li><a href="/photos"><i class="fa fa-photo icon" aria-hidden="true"></i>Photos</a></li>
-                    @if(\App\User::where('id', session('id'))->get('rank')->first()->rank >= 3)<li><a href=""><i class="fa fa-cogs icon" aria-hidden="true"></i>ACP</a></li>@endif
+                    <li><a href="/logout"><i class="fa fa-power-off icon" aria-hidden="true"></i>Abmelden</a></li>
+                    @if(\App\User::where('id', session('id'))->get('rank')->first()->rank >= 3)<li><a href="/acp/login"><i class="fa fa-cogs icon" aria-hidden="true"></i>ACP</a></li>@endif
                 </ul>
             </div>
         </div>

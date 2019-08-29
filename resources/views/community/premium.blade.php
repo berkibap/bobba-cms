@@ -84,14 +84,9 @@ input[type=submit] {
         </div>
     </div>
     <div style="clear:both"></div>
-</div>
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-    <script type="application/javascript" src="/web/js/alertify.js"></script>
-    <script type="application/javascript" src="/web/js/alertify.min.js"></script>
+</div>@include('partials.footer')
     @if(Session::has('message'))
     <script>alertify.success('You\'ve bought premium successfully!');</script>
     @elseif(Session::has('error'))
     <script>alertify.error('Insufficent Diamonds!');</script>
     @endif
-</body></html>

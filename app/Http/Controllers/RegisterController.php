@@ -28,7 +28,7 @@ class RegisterController extends Controller
                             if($year + 13 <= date('Y')) {
                                 if(User::where('username', $username)->get()->count() == 0) {
                                     if(User::where('mail', $mail)->get()->count() == 0) {
-                                        User::create([
+                                        $array = [
                                             'username' => $username,
                                             'password' => password_hash($password, PASSWORD_DEFAULT),
                                             'mail' => $mail,
@@ -46,10 +46,14 @@ class RegisterController extends Controller
                                             'ip_current' => $request->ip(),
                                             'home_room' => '0',
                                             'pin' => '0000'
-                                        ]);
-                                        $request->session()->set('isLoggedIn', true);
-                                        foreach($user as $u => $val) {
-                                            session($u, $val);
+                                        ];
+                                        $created = User::create($array);
+                                        $request->session()->put('isLoggedIn', true);
+                                        foreach($array as $key => $value) {
+                                            if($key == 'password') {
+                                                continue;
+                                            }
+                                            session($key, $value);
                                         }
                                         return redirect('/me');
                                     } else {
